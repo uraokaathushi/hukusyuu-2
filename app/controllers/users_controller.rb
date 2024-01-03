@@ -26,11 +26,11 @@ class UsersController < ApplicationController
       render "edit"
     end
   end
-
+  
   private
 
   def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image)
+    params.require(:user).permit(:name, :email, :password, :introduction, :profile_image)
   end
 
   def ensure_correct_user
