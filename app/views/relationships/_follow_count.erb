@@ -1,0 +1,12 @@
+  <% user = @users.first %>
+  <tr>
+  <th>follows</th>
+  <th><% link_to user_relationships_path(users) do %>
+    <%= user.followings.count %>
+    <% end %>
+    </th>
+  </tr>
+  <tr>
+  <th>followers</th>
+  <th><%= user.followers.count %></th>
+  </tr>
