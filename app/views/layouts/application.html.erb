@@ -13,8 +13,11 @@
     <%= render 'layouts/header' %>
       <main>
         <p id="notice"><%= notice %></p>
-      </main>
+        <div class="container text-center">
+         <%= render 'searches/search' %>
+        </div>
      <%= yield %>
+     </main>
     <%= render 'layouts/footer' %>
 
   </body>

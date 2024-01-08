@@ -1,24 +1,24 @@
-<table>  
+<table>
       <tbody>
          <% book.book_comments.each do |book_comment| %>
         <tr>
-          <td>
+          <td style="text-align: left;">
+          <%= image_tag book_comment.user.get_profile_image, size:'50x50' %>
 　　　　　<%= link_to user_path(book_comment.user) do %>
-           <%= image_tag book_comment.user.get_profile_image, size:'100x100' %><br>
+           <br>
            <%= book_comment.user.name %>
           <% end %>
           </td>
           <td><%= book_comment.comment %></td>
           <td>
            <% if book_comment.user == current_user %>>
-            <%= link_to 'Destroy', book_book_comment_path(book, book_comment), method: :delete, class: "btn btn-sm btn-danger" %>
+            <%= link_to 'Destroy', book_book_comment_path(book, book_comment), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
            <% end %>
            </td>
-          </tr> 
+          </tr>
         <% end %>
-        
       </tbody>
-</table>      
-      
+</table>
 
-      
+
+

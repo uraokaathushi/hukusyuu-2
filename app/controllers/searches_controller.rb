@@ -1,14 +1,14 @@
 class SearchesController < ApplicationController
   before_action :authenticate_user!
+
   def search
     @range = params[:range]
+    @word = params[:word]
 
-    if @range == "User"
+    if @range == "user"
       @users = User.looks(params[:search], params[:word])
     else
-      @books = Book.looks(params[:search], parans[:word])
+      @books = Book.looks(params[:search], params[:word])
     end
   end
-
-
 end
